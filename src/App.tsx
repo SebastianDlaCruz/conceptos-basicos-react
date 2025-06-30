@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Productos from "./Components/Productos/Productos";
+import { productos } from "./data/productos.data";
 
 function App() {
 
@@ -55,6 +57,14 @@ function App() {
 
       {/* onClick propiedad que establece los eventos , existe muchas mas pero todos empizan con on */}
       <button onClick={handleClick}>Cambiar</button>
+
+
+      {
+        productos.map((producto) => (
+          <Productos nombre={producto.nombre} precio={producto.precio} />
+        ))
+      }
+
 
     </>
   )
